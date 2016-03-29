@@ -1,0 +1,95 @@
+% Inner style file for the BEAMER FM (Data61-ANU) THEME 2016
+% Copyright 2016 by Felipe Maldonado
+% This file may be distributed and/or modified
+% 	1. under the LaTeX Project Public License and/or
+% 	2. under the GNU Public License.
+%
+% Based on: beamerinnertheme by Marco BarisioneFM
+
+\mode<presentation>
+
+% % Use alternative title page style.
+% \DeclareOptionBeamer{alternativetitlepage}[true]{\def\beamer@FM@alternativetitlepage{#1}}
+
+% Logo to use in the alternative title page.
+% \def\beamer@FM@titlepagelogo{}
+% \DeclareOptionBeamer{titlepagelogo}{\def\beamer@FM@titlepagelogo{#1}}
+
+% Bullet shape.
+\DeclareOptionBeamer{bullet}{\def\beamer@FM@bullet{#1}}
+\DeclareOptionBeamer{shadow}[true]{\def\beamer@themerounded@shadow{#1}}
+\ExecuteOptionsBeamer{shadow=false}
+
+
+% \ExecuteOptionsBeamer{alternativetitlepage=false,bullet=square}
+\ProcessOptionsBeamer
+
+
+
+% Margins.
+\newlength{\beamer@FM@normalmargin}
+\setlength{\beamer@FM@normalmargin}{.06\paperwidth}
+\setbeamersize{text margin left=\beamer@FM@normalmargin}
+\setbeamersize{text margin right=\beamer@FM@normalmargin}
+\setlength\leftmargini{.6\beamer@FM@normalmargin}
+\setlength\leftmarginii{.6\beamer@FM@normalmargin}
+\setlength\leftmarginiii{.6\beamer@FM@normalmargin}
+
+% Normal title page.
+\defbeamertemplate*{title page normal}{FM theme}[1][]
+{
+  \vbox{}
+  \vfill
+  \begin{centering}
+    \begin{beamercolorbox}[wd=\paperwidth,sep=8pt,center,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+  \vfill
+}
+
+
+% Items.
+\defbeamertemplate{itemize item}{squarealt}%
+{\tiny\raise.5ex\hbox{\donotcoloroutermaths$\blacksquare$}}
+\defbeamertemplate{itemize subitem}{squarealt}%
+{\tiny\raise.4ex\hbox{\donotcoloroutermaths$\square$}}
+\defbeamertemplate{itemize subsubitem}{squarealt}%
+{\tiny\raise.3ex\hbox{\donotcoloroutermaths$\blacksquare$}}
+% 
+\defbeamertemplate{itemize item}{circlealt}%
+{\small\raise.2ex\hbox{\donotcoloroutermaths$\bullet$}}
+\defbeamertemplate{itemize subitem}{circlealt}%
+{\small\raise.1ex\hbox{\donotcoloroutermaths$\circ$}}
+\defbeamertemplate{itemize subsubitem}{circlealt}%
+{\scriptsize\raise.1ex\hbox{\donotcoloroutermaths$\bullet$}}
+\setbeamertemplate{items}[circlealt]
+% 
+\def\circletext{circle}
+\ifx\beamer@FM@bullet\circletext
+  \setbeamertemplate{items}[circlealt]
+\else
+  \setbeamertemplate{items}[squarealt]
+\fi
+
+\setbeamertemplate{blocks}[rounded][shadow=\beamer@themerounded@shadow]
+
+
+\mode<all>
+
