@@ -1,0 +1,114 @@
+\documentclass[a4paper, 10pt]{article} 
+% 215.9mm × 279.4mm
+\pagestyle{empty}
+\usepackage{tikz}
+
+
+%\usepackage{ucs}
+\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+ 
+\usepackage{amsmath}
+
+
+\usepackage[left=3.8cm,top=1.5cm,right=0cm]{geometry}
+
+\begin{document}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+
+\tikzset{normal lines/.style={gray, very thin}} 
+\tikzset{margin lines/.style={gray, thick}} 
+\tikzset{mm lines/.style={gray, ultra thin}} 
+\tikzset{strong lines/.style={black, very thin}} 
+\tikzset{master lines/.style={black, very thick}} 
+\tikzset{dashed master lines/.style={loosely dashed, black, very thick}} 
+
+\node at (current page.south west){
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \draw[style=master lines] (0,1in)--(8.25in,1in);
+    \draw[style=master lines] (0,0.95in)--(8.25in,0.95in);
+    
+    \draw[style=master lines] (0,0.002in)--(8.25in, 0.002in);
+    \draw[style=master lines] (0,11.67in)--(8.25in, 11.678in);
+
+    
+    \draw[style=strong lines] (1.5in,1in)--(1.5in,11.67in);
+    \draw[style=strong lines] (1.48in,1in)--(1.48in,11.67in);
+    
+    \draw[style=master lines](0,0in)--(0,11.67in);
+    \draw[style=master lines](8.25in,0in)--(8.25in,11.678in);
+    
+    
+      \foreach \y in {0.71, 1.42,...,22.72}
+      \draw[densely dotted](1.5in,1in+\y cm) -- (8.25in, 1in+\y cm);
+
+  \end{tikzpicture}
+};
+\node (thiso) at (current page.north east){};
+\node (this1) at (thiso.west){};
+\node (this) at (this1.west){};
+\node (thar) at (this.south) {};
+\node (1) [gray, left]  at (thar.south west){\it Data61-ANU};
+\node (2) [gray,below] at (1.south){Notes};
+\node (3) [gray,below] at (2.south){Felipe Maldonado};
+\node (4) [gray,below] at (3.south){\today};
+\node (h1) at (current page.west){ 
+\begin{tikzpicture}[remember picture, overlay]
+ \draw (1.2,4) circle (5pt);
+ \draw (1.2,-4) circle (5pt);
+
+\end{tikzpicture}
+};
+
+
+\end{tikzpicture}
+
+%\newpage
+%
+%\begin{tikzpicture}[remember picture, overlay]
+%%\begin{flushright}
+%
+%%\end{flushright}
+%\tikzset{normal lines/.style={gray, very thin}} 
+%\tikzset{margin lines/.style={gray, thick}} 
+%\tikzset{mm lines/.style={gray, ultra thin}} 
+%\tikzset{strong lines/.style={black, very thin}} 
+%\tikzset{master lines/.style={black, very thick}} 
+%\tikzset{dashed master lines/.style={loosely dashed, black, very thick}} 
+%
+%\node at (current page.north east){
+%  \begin{tikzpicture}[remember picture, overlay]
+%
+%    \draw[style=master lines] (-0,-10in)--(-8.5in,-10in);
+%    \draw[style=master lines] (-0,-10.05in)--(-8.5in,-10.05in);
+%    
+%    
+%    \draw[style=strong lines] (-1.5in,-0in)--(-1.5in,-10in);
+%    \draw[style=strong lines] (-1.48in,-0in)--(-1.48in,-10in);
+%    
+%      \foreach \y in {0.71, 1.42,...,22.72}
+%      \draw[densely dotted](-1.5in,-0.8in-\y cm) -- (-8.5in, -0.8in-\y cm);
+%
+%  \end{tikzpicture}
+%};
+%\node (this) at (current page.north west){};
+%\node (thar) at (this.south) {};
+%\node (1) [gray, right]  at (thar.south east){\it };
+%\node (2) [gray,below] at (1.south){};
+%\node (3) [gray,below] at (2.south){};
+%\node (4) [gray,below] at (3.south){\today};
+%\node (h1) at (current page.east){ 
+%\begin{tikzpicture}[remember picture, overlay]
+% \draw (-1.2,4) circle (5pt);
+% \draw (-1.2,-4) circle (5pt);
+%
+%\end{tikzpicture}
+%};
+%
+%
+%\end{tikzpicture}
+
+\end{document}

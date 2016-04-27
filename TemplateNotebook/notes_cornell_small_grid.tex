@@ -1,0 +1,143 @@
+\documentclass[a4paper, 10pt]{article} 
+% 215.9mm × 279.4mm
+\pagestyle{empty}
+\usepackage{tikz}
+
+
+%\usepackage{ucs}
+\usepackage[applemac]{inputenc}
+\usepackage[T1]{fontenc}
+ 
+\usepackage{amsmath}
+
+
+\usepackage[left=3.8cm,top=1.5cm,right=0cm]{geometry}
+
+\begin{document}
+
+
+\begin{tikzpicture}[remember picture, overlay]
+
+\tikzset{normal lines/.style={gray, very thin}} 
+\tikzset{margin lines/.style={gray, thick}} 
+\tikzset{mm lines/.style={gray, ultra thin}} 
+\tikzset{strong lines/.style={black, very thin}} 
+\tikzset{master lines/.style={black, very thick}} 
+\tikzset{dashed master lines/.style={loosely dashed, black, very thick}} 
+
+\node at (current page.south west){
+  \begin{tikzpicture}[remember picture, overlay]
+
+    \draw[style=master lines] (0.479,1in)--(8in,1in);
+    \draw[style=master lines] (0.479,0.95in)--(8.in,0.95in); %bottom comment lines
+    
+    \draw[style=master lines] (0.479,0.2in)--(8in, 0.2in);
+    \draw[style=master lines] (0.479,11.41in)--(8in, 11.41in); %superior horizontal line
+
+    
+    \draw[style=strong lines] (1.2in,1in)--(1.2in,11.41in); %vertical indented lines
+    \draw[style=strong lines] (1.18in,1in)--(1.18in,11.41in); 
+    
+    \draw[style=master lines](0.5,0.2in)--(0.5,11.41in); %vertical left border line
+    \draw[style=master lines](8in,0.19in)--(8in,11.41in); %vertical right border line
+    
+    
+      \foreach \y in {0.71, 1.42,...,24.14}%22.72}
+      \draw[densely dotted](1.2in,1in+\y cm) -- (8in, 1in+\y cm);
+      
+      \foreach \z in {0.716, 1.432,...,17.18}
+      \draw[densely dotted](1.2in+\z cm,1in) -- (1.2in+\z cm, 10.5in);
+
+  \end{tikzpicture}
+};
+\node (thiso) at (current page.north east){};
+\node (this1) at (thiso.west){};
+\node (this2) at (this1.west){};
+\node (this3) at (this2.west){};
+\node (this4) at (this3.west){};
+\node (this5) at (this4.west){};
+\node (this6) at (this5.west){};
+\node (this7) at (this6.west){};
+
+\node (this) at (this7.west){};
+\node (thar1) at (this.south) {};
+\node (thar2) at (thar1.south) {};
+\node (thar3) at (thar2.south) {};
+\node (thar4) at (thar3.south) {};
+\node (thar5) at (thar4.south) {};
+\node (thar6) at (thar5.south) {};
+\node (thar) at (thar6.south) {};
+
+\node (1) [gray, left]  at (thar.south west){\it Data61-ANU};
+\node (2) [gray,below] at (1.south){Notes};
+\node (3) [gray,below] at (2.south){Felipe Maldonado};
+\node (4) [gray,below] at (3.south){\today};
+%\node (h1) at (current page.west){ 
+%};
+
+
+\end{tikzpicture}
+
+\newpage
+
+\begin{tikzpicture}[remember picture, overlay]
+%\begin{flushright}
+
+%\end{flushright}
+\tikzset{normal lines/.style={gray, very thin}} 
+\tikzset{margin lines/.style={gray, thick}} 
+\tikzset{mm lines/.style={gray, ultra thin}} 
+\tikzset{strong lines/.style={black, very thin}} 
+\tikzset{master lines/.style={black, very thick}} 
+\tikzset{dashed master lines/.style={loosely dashed, black, very thick}} 
+
+\node at (current page.south west){
+    \begin{tikzpicture}[remember picture, overlay]
+
+    \draw[style=master lines] (0.479,1in)--(8in,1in);
+    \draw[style=master lines] (0.479,0.95in)--(8.in,0.95in); %bottom comment lines
+    
+    \draw[style=master lines] (0.479,0.2in)--(8in, 0.2in);
+    \draw[style=master lines] (0.479,11.41in)--(8in, 11.41in); %superior horizontal line
+
+    
+    \draw[style=strong lines] (7in,1in)--(7in,11.41in); %vertical indented lines
+    \draw[style=strong lines] (7.02in,1in)--(7.02in,11.41in); 
+    
+    \draw[style=master lines](0.5,0.2in)--(0.5,11.41in); %vertical left border line
+    \draw[style=master lines](8in,0.19in)--(8in,11.41in); %vertical right border line
+    
+    
+      \foreach \y in {0,0.71, 1.42,...,24.14}%22.72}
+      \draw[densely dotted](0.479,1in+\y cm) -- (7in, 1in+\y cm);
+          \foreach \z in {0,0.717, 1.434,...,17.208}
+      \draw[densely dotted](0.2in+\z cm,1in) -- (0.2in+\z cm, 10.5in);
+
+  \end{tikzpicture}
+};
+\node (thiso) at (current page.north west){};
+\node (this1) at (thiso.east){};
+\node (this2) at (this1.east){};
+\node (this3) at (this2.east){};
+\node (this4) at (this3.east){};
+\node (this5) at (this4.east){};
+\node (this6) at (this5.east){};
+\node (this7) at (this6.east){};
+
+\node (this) at (this7.east){};
+\node (thar1) at (this.south) {};
+\node (thar2) at (thar1.south) {};
+\node (thar3) at (thar2.south) {};
+\node (thar4) at (thar3.south) {};
+\node (thar5) at (thar4.south) {};
+\node (thar6) at (thar5.south) {};
+\node (thar) at (thar6.south) {};
+
+\node (1) [gray, right]  at (thar.south east){\it Data61-ANU};
+\node (2) [gray,below] at (1.south){Notes};
+\node (3) [gray,below] at (2.south){Felipe Maldonado};
+\node (4) [gray,below] at (3.south){\today};
+
+\end{tikzpicture}
+
+\end{document}
